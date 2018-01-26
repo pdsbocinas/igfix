@@ -1,0 +1,22 @@
+.services-grid-image {
+  margin-left: 55px;
+  display: flex;
+  justify-content: flex-start;
+
+  @media (min-width: $screen-md) {
+    display: block;
+  }
+
+  li {
+    border-radius: $border-radius-base;
+    border: 1px solid $input-border;
+    width: 73px;
+    height: 73px;
+    margin-bottom: 20px;
+    margin-right: 12px;
+
+    @media (min-width: $screen-md) {
+      margin-right: 0;
+    }
+  }
+}

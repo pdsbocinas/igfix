@@ -1,0 +1,33 @@
+.flex-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.panel {
+  width: 100%;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+
+  @media (min-width: $screen-md) {
+    width: 210px
+  }
+
+  h3 {
+    font-size: 15px;
+    letter-spacing: 0.7px;
+    color: #8f8f8f;
+    font-weight: 400;
+    margin-bottom: 7px;
+  }
+  p {
+    font-size: 12px;
+    letter-spacing: 0.5px;
+    color: $price-color;
+    margin-bottom: 12px;
+
+    + p {
+      font-size: 12px;
+      letter-spacing: 0.5px;
+      color: #ccc;
+    }
+  }
+}

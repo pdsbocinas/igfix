@@ -1,0 +1,19 @@
+.list-group {
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 15px;
+  
+  strong {
+    margin-bottom: 10px;
+    display: block;
+  }
+
+  li {
+    margin-bottom: 5px;
+
+    span {
+      color: #8199d0;
+      font-size: 13px;
+    }
+  }
+
+}

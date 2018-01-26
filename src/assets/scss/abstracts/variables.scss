@@ -1,0 +1,57 @@
+$gray-base:              #000;
+$gray-darker:            lighten($gray-base, 13.5%); // #222
+$gray-dark:              lighten($gray-base, 20%);   // #333
+$gray:                   lighten($gray-base, 33.5%); // #555
+$gray-light:             lighten($gray-base, 46.7%); // #777
+$gray-lighter:           lighten($gray-base, 93.5%); // #eee
+
+$text-color:             $gray-dark;
+
+$fa-font-path:        "../fonts";
+
+$input-border-focus:     #1d50b1;
+
+$line-height-computed:  40px;
+
+$headings-font-weight: 600;
+
+$font-size-h2:           floor(($font-size-base * 1.9)); // ~26px
+
+$link-color:            #ccc;
+$link-hover-color:      darken($link-color, 15%) !default;
+$link-hover-decoration: none;
+
+$btn-primary-color:              #fff;
+$btn-primary-bg:                 #ff4081;
+$btn-primary-border:             darken($btn-primary-bg, 5%);
+
+$navbar-height:                    70px;
+$navbar-default-color:             #1d50b1;
+$navbar-default-bg:                #1d50b1;
+$border-radius-base:               0px;
+$navbar-border-radius:             $border-radius-base;
+
+$navbar-default-brand-color:       #fff;
+$navbar-default-brand-hover-color: #fff;
+
+$navbar-default-link-color:                #fff;
+$navbar-default-link-hover-color:          #ccc;
+$navbar-default-link-hover-bg:             transparent;
+$navbar-default-link-active-color:         #fff;
+$navbar-default-link-active-bg:            darken($navbar-default-bg, 6.5%);
+
+$nav-pills-active-link-hover-bg:           transparent;
+$nav-pills-active-link-hover-color:        #000;
+
+$nav-link-hover-bg:                        transparent;
+
+$navbar-margin-bottom: 12px;
+
+$breadcrumb-padding-vertical:   8px;
+$breadcrumb-padding-horizontal: 55px;
+$breadcrumb-bg:                 transparent;
+$breadcrumb-color:              #c1c1c1;
+$breadcrumb-active-color:       #808080;
+$breadcrumb-separator:          ">";
+
+$price-color: #ff3982;

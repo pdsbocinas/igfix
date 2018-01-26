@@ -1,0 +1,21 @@
+ul {
+  margin: 0;
+  padding: 0;
+
+  li {
+    list-style: none;
+    margin: 0;
+  }
+}
+
+.inner-content {
+  max-width: 700px;
+  overflow: hidden;
+  margin: 0 auto;
+
+  &.flex-container {
+    @media (max-width: $screen-xs) {
+      display: block;
+    }
+  }
+}
