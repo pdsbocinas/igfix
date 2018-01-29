@@ -1,4 +1,4 @@
-class Calculator {
+export default class Calculator {
 
   constructor(price,elemIncrease,elemDecrease,elemSelect) {
     this.elemIncrease = document.getElementById("increase")

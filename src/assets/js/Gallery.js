@@ -1,4 +1,4 @@
-class Gallery {
+export default class Gallery {
 
   constructor(gallery) {
     this.gallery = document.getElementById(gallery)

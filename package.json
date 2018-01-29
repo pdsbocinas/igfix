@@ -12,10 +12,12 @@
   "dependencies": {
     "babel-loader": "^7.1.2",
     "babel-polyfill": "^6.26.0",
+    "babel-register": "^6.26.0",
     "bootstrap-sass": "^3.3.7",
     "css-loader": "^0.28.7",
     "font-awesome": "^4.7.0",
     "gulp": "^3.9.1",
+    "gulp-cli": "^2.0.1",
     "gulp-sass": "^3.1.0",
     "gulp-webpack": "^1.5.0",
     "merge-stream": "^1.0.1",
