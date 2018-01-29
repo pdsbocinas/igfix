@@ -1,3 +1,12 @@
+/*
+
+Not work with Gulp :/
+
+import Calculator from './Calculator'
+import Gallery from './Gallery'
+
+*/
+
 class Calculator {
 
   constructor(price,elemIncrease,elemDecrease,elemSelect) {
