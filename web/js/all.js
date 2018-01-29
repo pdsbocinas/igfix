@@ -1,8 +1,118 @@
 "use strict";
 
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+var Calculator = function () {
+  function Calculator(price, elemIncrease, elemDecrease, elemSelect) {
+    _classCallCheck(this, Calculator);
+
+    this.elemIncrease = document.getElementById("increase");
+    this.elemDecrease = document.getElementById("decrease");
+    this.elemSelect = document.getElementById("frigorias");
+    this.price = document.getElementById("price").innerHTML = price;
+  }
+
+  _createClass(Calculator, [{
+    key: "setup",
+    value: function setup() {
+      var self = this;
+      this.elemSelect.addEventListener('change', self.changeOption);
+      this.elemIncrease.addEventListener('click', self.increase);
+      this.elemDecrease.addEventListener('click', self.decrease);
+    }
+  }, {
+    key: "increase",
+    value: function increase() {
+      var base = document.getElementById('frigorias').value;
+      var price = parseInt(document.getElementById("price").innerHTML);
+      var value = parseInt(document.getElementById('number').value);
+
+      value++;
+
+      var actualPrice = base * value;
+      price = document.getElementById("price").innerHTML = actualPrice;
+
+      document.getElementById('number').value = value;
+    }
+  }, {
+    key: "decrease",
+    value: function decrease() {
+      var base = document.getElementById('frigorias').value;
+      var price = parseInt(document.getElementById("price").innerHTML);
+      var value = parseInt(document.getElementById('number').value);
+
+      value = isNaN(value) ? 1 : value;
+
+      if (value < 1) {
+        value = 1;
+        return;
+      }
+
+      value--;
+
+      var actualPrice = price - base;
+      price = document.getElementById("price").innerHTML = actualPrice;
+
+      document.getElementById('number').value = value;
+    }
+  }, {
+    key: "changeOption",
+    value: function changeOption() {
+      var option = document.getElementById('frigorias').value;
+      var price = parseInt(document.getElementById("price").innerHTML);
+      var value = document.getElementById('number').value;
+
+      if (option == 1000) {
+        var actualPrice = option * value;
+        document.getElementById("price").innerHTML = actualPrice;
+      }
+
+      if (option == 2000) {
+        var _actualPrice = option * value;
+        document.getElementById("price").innerHTML = _actualPrice;
+      }
+
+      if (option == 3000) {
+        var _actualPrice2 = option * value;
+        document.getElementById("price").innerHTML = _actualPrice2;
+      }
+    }
+  }]);
+
+  return Calculator;
+}();
+'use strict';
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+var Gallery = function () {
+  function Gallery(gallery) {
+    _classCallCheck(this, Gallery);
+
+    this.gallery = document.getElementById(gallery);
+  }
+
+  _createClass(Gallery, [{
+    key: 'changeItem',
+    value: function changeItem() {
+      var itemList = document.getElementsByClassName('item');
+
+      for (var i = 0; i < itemList.length; i++) {
+        itemList[i].addEventListener('mouseover', function () {
+          var thumbClicked = this.src;
+          document.getElementById("main-image").src = thumbClicked;
+        });
+      }
+    }
+  }]);
+
+  return Gallery;
+}();
+"use strict";
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
@@ -88,17 +198,6 @@ var Calculator = function () {
   return Calculator;
 }();
 
-exports.default = Calculator;
-'use strict';
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
 var Gallery = function () {
   function Gallery(gallery) {
     _classCallCheck(this, Gallery);
@@ -107,7 +206,7 @@ var Gallery = function () {
   }
 
   _createClass(Gallery, [{
-    key: 'changeItem',
+    key: "changeItem",
     value: function changeItem() {
       var itemList = document.getElementsByClassName('item');
 
@@ -123,25 +222,12 @@ var Gallery = function () {
   return Gallery;
 }();
 
-exports.default = Gallery;
-'use strict';
-
-var _Calculator = require('.Calculator');
-
-var _Calculator2 = _interopRequireDefault(_Calculator);
-
-var _Gallery = require('./Gallery');
-
-var _Gallery2 = _interopRequireDefault(_Gallery);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
 document.addEventListener("DOMContentLoaded", function () {
 
-  var calculator = new _Calculator2.default(1000, "increase", "decrease", "frigorias");
+  var calculator = new Calculator(1000, "increase", "decrease", "frigorias");
   calculator.setup();
 
-  var gallery = new _Gallery2.default("gallery");
+  var gallery = new Gallery("gallery");
   gallery.changeItem();
 
   var trigger = document.getElementById("enter");
